@@ -1,0 +1,8 @@
+{
+  "name": "Qasberry Tech - AI Consultation",
+  "description": "Futuristic AI consultation platform featuring an Analog-to-AI roadmap generator and industry-specific business transformation solutions.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
