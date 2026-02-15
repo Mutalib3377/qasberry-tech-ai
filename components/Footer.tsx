@@ -15,7 +15,7 @@ const LogoIcon = ({ size = 40 }: { size?: number }) => (
       className="relative z-10 w-full h-full rounded-[10px] overflow-hidden bg-[#0B0F3F] flex items-center justify-center border border-white/5"
     >
       <img
-        src="/Untitled design (4).png"
+        src="https://i.ibb.co/pvPS6mc9/Untitled-design-6.png"
         alt="Qasberry Tech Logo Icon"
         className="w-full h-full object-contain p-1.5"
       />

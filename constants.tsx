@@ -1,12 +1,12 @@
 
 import React from 'react';
-import { 
-  Droplets, 
-  Stethoscope, 
-  Leaf, 
-  Car, 
-  Headphones, 
-  GraduationCap 
+import {
+  Droplets,
+  Stethoscope,
+  Leaf,
+  Car,
+  Headphones,
+  GraduationCap
 } from 'lucide-react';
 import { Industry } from './types';
 
@@ -28,7 +28,7 @@ export const INDUSTRIES = [
     id: Industry.Healthcare,
     name: 'Healthcare AI',
     icon: <Stethoscope className="w-8 h-8" />,
-    description: 'Diagnostic assistance, patient workflow optimization, and data-driven preventive care.'
+    description: 'Diagnostic assistance, patient workflow optimisation, and data-driven preventive care.'
   },
   {
     id: Industry.Agriculture,
@@ -52,7 +52,7 @@ export const INDUSTRIES = [
     id: Industry.Education,
     name: 'EdTech AI',
     icon: <GraduationCap className="w-8 h-8" />,
-    description: 'Personalized learning pathways and automated administrative scaling.'
+    description: 'Personalised learning pathways and automated administrative scaling.'
   }
 ];
 

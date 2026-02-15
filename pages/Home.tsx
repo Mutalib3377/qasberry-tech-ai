@@ -98,7 +98,7 @@ const Home: React.FC = () => {
       {/* Simplified Value Prop Section with Premium Cards */}
       <section className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
         {[
-          { icon: <Layers className="text-[#00F5FF]" />, title: 'Deep Digitalization', desc: 'We don\'t just layer AI over mess. We restructure your data foundation for maximum model accuracy.' },
+          { icon: <Layers className="text-[#00F5FF]" />, title: 'Deep Digitalisation', desc: 'We don\'t just layer AI over mess. We restructure your data foundation for maximum model accuracy.' },
           { icon: <Globe className="text-[#9A6CFF]" />, title: 'Regional Expertise', desc: 'Bespoke frameworks built for the unique infrastructure challenges of the African industrial market.' },
           { icon: <ShieldCheck className="text-[#00F5FF]" />, title: 'Governance First', desc: 'Every model we deploy is transparent, auditable, and strictly compliant with global ethical standards.' }
         ].map((item, idx) => (
@@ -118,7 +118,7 @@ const Home: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-end gap-6">
           <div className="space-y-4">
             <h2 className="text-4xl md:text-6xl font-black tracking-tighter">Sector <span className="text-[#00F5FF]">Mastery.</span></h2>
-            <p className="text-gray-400 max-w-xl">Highly specialized AI implementation across critical industrial verticals.</p>
+            <p className="text-gray-400 max-w-xl">Highly specialised AI implementation across critical industrial verticals.</p>
           </div>
         </div>
 
@@ -159,7 +159,7 @@ const Home: React.FC = () => {
             </div>
             <h2 className="text-4xl md:text-6xl font-black leading-tight tracking-tighter">Welcome  <br /><span className="text-[#FF0000]">to the Future of AI Learning</span></h2>
             <p className="text-gray-400 leading-relaxed text-lg font-light">
-              Artificial Intelligence is transforming every industry — and those who understand it will lead the future. At our AI Academy, we provide practical, real-world AI training designed to help you innovate, analyze, strategize, and grow with confidence.            </p>
+              Artificial Intelligence is transforming every industry and those who understand it will lead the future. At our AI Academy, we provide practical, real world AI training designed to help you innovate, analyse, strategise, and grow with confidence. </p>
             <Link to="/knowledge-center" className="inline-flex items-center gap-3 px-10 py-5 glass border-[#FF0000]/20 text-white font-bold rounded-2xl hover:bg-[#FF0000]/10 transition-all">
               Watch Deep Dives <Youtube size={20} />
             </Link>

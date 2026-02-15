@@ -1,16 +1,16 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  CheckCircle2, 
-  Terminal, 
-  ChevronRight, 
-  ChevronLeft, 
-  Zap, 
-  Layers, 
-  Database, 
-  Cpu, 
-  Eye 
+import {
+  CheckCircle2,
+  Terminal,
+  ChevronRight,
+  ChevronLeft,
+  Zap,
+  Layers,
+  Database,
+  Cpu,
+  Eye
 } from 'lucide-react';
 import { Industry, RoadmapInputs } from '../types';
 import { INDUSTRIES } from '../constants';
@@ -29,7 +29,7 @@ const RoadmapBuilder: React.FC = () => {
   const toggleSelection = (field: 'manualProcesses' | 'infrastructure', value: string) => {
     setInputs(prev => ({
       ...prev,
-      [field]: prev[field].includes(value) 
+      [field]: prev[field].includes(value)
         ? prev[field].filter(i => i !== value)
         : [...prev[field], value]
     }));
@@ -57,29 +57,29 @@ const RoadmapBuilder: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {[
-            { 
-              pillar: 'Digitization', 
-              icon: <Database className="text-[#00F5FF]" />, 
+            {
+              pillar: 'Digitisation',
+              icon: <Database className="text-[#00F5FF]" />,
               action: 'Converting physical logs to cloud-native data architectures.',
               details: 'Move from ' + (inputs.manualProcesses[0] || 'manual paper') + ' to structured SQL tables.'
             },
-            { 
-              pillar: 'Connectivity', 
-              icon: <Layers className="text-[#9A6CFF]" />, 
+            {
+              pillar: 'Connectivity',
+              icon: <Layers className="text-[#9A6CFF]" />,
               action: 'IoT & Real-time Cloud Integration.',
               details: 'Enabling edge sensors to feed live operational metrics into the central brain.'
             },
-            { 
-              pillar: 'Augmentation', 
-              icon: <Cpu className="text-[#00F5FF]" />, 
+            {
+              pillar: 'Augmentation',
+              icon: <Cpu className="text-[#00F5FF]" />,
               action: 'Initial AI Assistants & Predictive Insights.',
               details: 'Human-in-the-loop decision support systems to maximize ' + (inputs.infrastructure.includes('No digital data') ? 'early-stage visibility' : 'operational uptime') + '.'
             },
-            { 
-              pillar: 'Transformation', 
-              icon: <Eye className="text-[#9A6CFF]" />, 
+            {
+              pillar: 'Transformation',
+              icon: <Eye className="text-[#9A6CFF]" />,
               action: 'Digital Twins & Full AI Agency.',
-              details: 'Complete autonomous optimization of the ' + inputs.industry + ' lifecycle.'
+              details: 'Complete autonomous optimisation of the ' + inputs.industry + ' lifecycle.'
             }
           ].map((p, idx) => (
             <div key={idx} className="glass p-8 rounded-3xl border-white/5 relative overflow-hidden group">
@@ -93,14 +93,14 @@ const RoadmapBuilder: React.FC = () => {
         </div>
 
         <div className="mt-20 glass p-10 rounded-3xl border-[#00F5FF]/30 text-center space-y-8">
-           <h3 className="text-2xl font-bold">Ready to implement this roadmap?</h3>
-           <p className="text-gray-400 max-w-xl mx-auto">This high-level overview is just the beginning. Our consultants can provide a detailed technical audit and execution timeline.</p>
-           <div className="flex justify-center gap-4">
-              <button onClick={() => setResult(false)} className="px-6 py-3 glass rounded-lg text-sm">Edit Parameters</button>
-              <Link to="/contact" className="px-8 py-3 bg-[#00F5FF] text-[#0B0F3F] font-bold rounded-lg shadow-lg hover:scale-105 transition-all">
-                Book Implementation Call
-              </Link>
-           </div>
+          <h3 className="text-2xl font-bold">Ready to implement this roadmap?</h3>
+          <p className="text-gray-400 max-w-xl mx-auto">This high-level overview is just the beginning. Our consultants can provide a detailed technical audit and execution timeline.</p>
+          <div className="flex justify-center gap-4">
+            <button onClick={() => setResult(false)} className="px-6 py-3 glass rounded-lg text-sm">Edit Parameters</button>
+            <Link to="/contact" className="px-8 py-3 bg-[#00F5FF] text-[#0B0F3F] font-bold rounded-lg shadow-lg hover:scale-105 transition-all">
+              Book Implementation Call
+            </Link>
+          </div>
         </div>
       </div>
     );
@@ -196,7 +196,7 @@ const RoadmapBuilder: React.FC = () => {
                 <p className="text-gray-400 text-sm">Current tech stack status for AI integration readiness.</p>
               </div>
               <div className="space-y-4">
-                 {[
+                {[
                   { label: 'Cloud Storage (AWS/Azure/GCP)', id: 'cloud' },
                   { label: 'Edge Sensors / IoT Devices', id: 'iot' },
                   { label: 'Legacy ERP/CRM Systems', id: 'legacy' },
@@ -221,7 +221,7 @@ const RoadmapBuilder: React.FC = () => {
 
           {/* Controls */}
           <div className="flex items-center justify-between pt-8 border-t border-white/5">
-            <button 
+            <button
               disabled={step === 1}
               onClick={() => setStep(s => s - 1)}
               className="flex items-center gap-2 text-gray-500 hover:text-white disabled:opacity-0 transition-all"
@@ -229,9 +229,9 @@ const RoadmapBuilder: React.FC = () => {
               <ChevronLeft size={20} />
               Back
             </button>
-            
+
             {step < 3 ? (
-              <button 
+              <button
                 onClick={() => setStep(s => s + 1)}
                 className="flex items-center gap-2 px-8 py-3 bg-[#00F5FF] text-[#0B0F3F] font-bold rounded-xl hover:scale-105 transition-all"
               >
@@ -239,7 +239,7 @@ const RoadmapBuilder: React.FC = () => {
                 <ChevronRight size={20} />
               </button>
             ) : (
-              <button 
+              <button
                 onClick={handleGenerate}
                 disabled={isGenerating}
                 className="flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-[#00F5FF] to-[#9A6CFF] text-[#0B0F3F] font-bold rounded-xl hover:scale-105 transition-all disabled:opacity-50"

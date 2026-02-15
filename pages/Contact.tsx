@@ -1,8 +1,23 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Calendar, Clock, ArrowRight, Globe } from 'lucide-react';
 
 const Contact: React.FC = () => {
+   const [selectedDate, setSelectedDate] = useState<number | null>(24);
+   const [selectedTime, setSelectedTime] = useState<string | null>(null);
+
+   const handleBooking = () => {
+      if (!selectedDate || !selectedTime) {
+         alert('Please select both a date and a time slot.');
+         return;
+      }
+
+      const subject = encodeURIComponent('Booking: 1:1 Strategy Session');
+      const body = encodeURIComponent(`Hello Qasberry team,\n\nI would like to book a 1:1 Strategy Session.\n\nDate: February ${selectedDate}, 2026\nTime: ${selectedTime}\nTimezone: WAT\n\nPlease let me know if this works for you.`);
+
+      window.location.href = `mailto:qasberrytech@gmail.com?subject=${subject}&body=${body}`;
+   };
+
    return (
       <div className="pb-32 px-6">
          <div className="max-w-7xl mx-auto pt-20 space-y-20">
@@ -30,7 +45,11 @@ const Contact: React.FC = () => {
                         <div className="grid grid-cols-7 gap-2 text-center text-xs">
                            {['M', 'T', 'W', 'T', 'F', 'S', 'S'].map(d => <div key={d} className="text-gray-500 font-bold mb-2">{d}</div>)}
                            {Array.from({ length: 31 }).map((_, i) => (
-                              <div key={i} className={`py-2 rounded-lg cursor-pointer hover:bg-[#00F5FF]/20 ${i + 1 === 24 ? 'bg-[#00F5FF] text-[#0B0F3F] font-bold' : 'glass'}`}>
+                              <div
+                                 key={i}
+                                 onClick={() => setSelectedDate(i + 1)}
+                                 className={`py-2 rounded-lg cursor-pointer transition-all ${selectedDate === i + 1 ? 'bg-[#00F5FF] text-[#0B0F3F] font-bold ring-2 ring-[#00F5FF]/50' : 'glass hover:bg-[#00F5FF]/10'}`}
+                              >
                                  {i + 1}
                               </div>
                            ))}
@@ -40,7 +59,11 @@ const Contact: React.FC = () => {
                         <h3 className="font-bold text-sm uppercase tracking-widest text-[#9A6CFF]">Select a Time</h3>
                         <div className="space-y-3">
                            {['09:00 AM', '11:30 AM', '02:00 PM', '04:30 PM'].map(time => (
-                              <button key={time} className="w-full py-3 glass border-white/5 rounded-xl hover:border-[#00F5FF]/50 transition-all text-sm font-medium">
+                              <button
+                                 key={time}
+                                 onClick={() => setSelectedTime(time)}
+                                 className={`w-full py-3 glass border-white/5 rounded-xl transition-all text-sm font-medium ${selectedTime === time ? 'border-[#00F5FF] bg-[#00F5FF]/10 text-[#00F5FF]' : 'hover:border-[#00F5FF]/50'}`}
+                              >
                                  {time}
                               </button>
                            ))}
@@ -52,8 +75,11 @@ const Contact: React.FC = () => {
                         <Clock size={16} />
                         Timezone: WAT (West Africa Time)
                      </div>
-                     <button className="px-8 py-3 bg-[#00F5FF] text-[#0B0F3F] font-bold rounded-xl shadow-lg hover:scale-105 transition-all">
-                        Continue
+                     <button
+                        onClick={handleBooking}
+                        className="px-8 py-3 bg-[#00F5FF] text-[#0B0F3F] font-bold rounded-xl shadow-lg hover:scale-105 active:scale-95 transition-all"
+                     >
+                        Confirm Booking
                      </button>
                   </div>
                </div>
@@ -86,7 +112,7 @@ const Contact: React.FC = () => {
 
                   <div className="glass p-10 rounded-3xl border-white/5 space-y-6">
                      <h3 className="text-2xl font-bold">Global Network</h3>
-                     <p className="text-gray-400">While our core is in South Africa, we operate globally, providing remote AI architecture and on-site industrial audits across the continent and beyond.</p>
+                     <p className="text-gray-400">While our core is in Africa, we operate globally, providing remote AI architecture and on-site industrial audits across the continent and beyond.</p>
                      <div className="flex gap-4">
                         <div className="flex flex-col items-center">
                            <div className="w-3 h-3 rounded-full bg-[#00F5FF] neon-cyan-glow mb-2"></div>

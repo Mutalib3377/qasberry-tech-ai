@@ -16,7 +16,7 @@ const LogoIcon = ({ size = 40 }: { size?: number }) => (
       className="relative z-10 w-full h-full rounded-[10px] overflow-hidden bg-[#0B0F3F] flex items-center justify-center border border-white/5"
     >
       <img
-        src="/Untitled design (4).png"
+        src="https://i.ibb.co/pvPS6mc9/Untitled-design-6.png"
         alt="Qasberry Tech Logo Icon"
         className="w-full h-full object-contain p-1.5"
       />
@@ -29,45 +29,109 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <nav className="fixed top-0 w-full z-50 glass border-b border-white/10 px-6 py-4">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-3 group">
-          <LogoIcon />
-          <span className="text-2xl font-light tracking-tight text-white/90 group-hover:text-white transition-colors">
-            qasberrytech
-          </span>
-        </Link>
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium">
-          <Link to="/" className="hover:text-[#00F5FF] transition-colors">Home</Link>
-          <Link to="/roadmap-builder" className="hover:text-[#00F5FF] transition-colors">Roadmap</Link>
-          <Link to="/knowledge-center" className="hover:text-[#00F5FF] transition-colors">Knowledge Center</Link>
-          <Link to="/resources" className="hover:text-[#00F5FF] transition-colors">Resources</Link>
-          <Link to="/blog" className="hover:text-[#00F5FF] transition-colors">Insights</Link>
-          <Link to="/contact" className="px-5 py-2 bg-gradient-to-r from-[#00F5FF] to-[#9A6CFF] rounded-full text-[#0B0F3F] font-bold hover:scale-105 transition-transform">
-            Book Consultation
+    <>
+      <nav className="fixed top-0 w-full z-50 glass border-b border-white/10 px-6 py-4">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <Link to="/" className="flex items-center gap-3 group">
+            <LogoIcon />
+            <span className="text-2xl font-light tracking-tight text-white/90 group-hover:text-white transition-colors">
+              qasberrytech
+            </span>
           </Link>
-        </div>
 
-        {/* Mobile Menu Toggle */}
-        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X /> : <Menu />}
-        </button>
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium">
+            <Link to="/" className="hover:text-[#00F5FF] transition-colors">Home</Link>
+            <Link to="/roadmap-builder" className="hover:text-[#00F5FF] transition-colors">Roadmap</Link>
+            <Link to="/knowledge-center" className="hover:text-[#00F5FF] transition-colors">Knowledge Center</Link>
+            <Link to="/resources" className="hover:text-[#00F5FF] transition-colors">Resources</Link>
+            <Link to="/blog" className="hover:text-[#00F5FF] transition-colors">Insights</Link>
+            <Link to="/contact" className="px-5 py-2 bg-gradient-to-r from-[#00F5FF] to-[#9A6CFF] rounded-full text-[#0B0F3F] font-bold hover:scale-105 transition-transform">
+              Book Consultation
+            </Link>
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X /> : <Menu />}
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile Menu Sidebar */}
+      <div className={`fixed inset-0 z-[60] md:hidden transition-opacity duration-300 ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+        {/* Backdrop */}
+        <div
+          className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+          onClick={() => setIsOpen(false)}
+        ></div>
+
+        {/* Sidebar */}
+        <div
+          className={`absolute top-0 right-0 h-full w-[280px] bg-[#0B0F3F] border-l border-white/10 shadow-2xl transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        >
+          <div className="flex flex-col h-full p-6">
+            <div className="flex justify-between items-center mb-8">
+              <span className="text-xl font-light tracking-tight text-white/90">Menu</span>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="p-2 text-white/70 hover:text-white transition-colors"
+              >
+                <X size={24} />
+              </button>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <Link
+                to="/"
+                onClick={() => setIsOpen(false)}
+                className="px-4 py-3 text-lg font-light text-white hover:text-[#00F5FF] hover:bg-white/5 rounded-lg transition-all"
+              >
+                Home
+              </Link>
+              <Link
+                to="/roadmap-builder"
+                onClick={() => setIsOpen(false)}
+                className="px-4 py-3 text-lg font-light text-white hover:text-[#00F5FF] hover:bg-white/5 rounded-lg transition-all"
+              >
+                Roadmap Builder
+              </Link>
+              <Link
+                to="/knowledge-center"
+                onClick={() => setIsOpen(false)}
+                className="px-4 py-3 text-lg font-light text-white hover:text-[#00F5FF] hover:bg-white/5 rounded-lg transition-all"
+              >
+                Knowledge Center
+              </Link>
+              <Link
+                to="/resources"
+                onClick={() => setIsOpen(false)}
+                className="px-4 py-3 text-lg font-light text-white hover:text-[#00F5FF] hover:bg-white/5 rounded-lg transition-all"
+              >
+                Resources
+              </Link>
+              <Link
+                to="/blog"
+                onClick={() => setIsOpen(false)}
+                className="px-4 py-3 text-lg font-light text-white hover:text-[#00F5FF] hover:bg-white/5 rounded-lg transition-all"
+              >
+                Blog
+              </Link>
+            </div>
+
+            <div className="mt-auto pt-8 border-t border-white/10">
+              <Link
+                to="/contact"
+                onClick={() => setIsOpen(false)}
+                className="block w-full py-3 bg-gradient-to-r from-[#00F5FF] to-[#9A6CFF] rounded-lg text-[#0B0F3F] font-bold text-center hover:shadow-[0_0_20px_rgba(0,245,255,0.3)] transition-all"
+              >
+                Book Consultation
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
-
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full glass p-6 flex flex-col gap-4">
-          <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
-          <Link to="/roadmap-builder" onClick={() => setIsOpen(false)}>Roadmap Builder</Link>
-          <Link to="/knowledge-center" onClick={() => setIsOpen(false)}>Knowledge Center</Link>
-          <Link to="/resources" onClick={() => setIsOpen(false)}>Resources</Link>
-          <Link to="/blog" onClick={() => setIsOpen(false)}>Blog</Link>
-          <Link to="/contact" className="text-[#00F5FF]" onClick={() => setIsOpen(false)}>Book Consultation</Link>
-        </div>
-      )}
-    </nav>
+    </>
   );
 };
 

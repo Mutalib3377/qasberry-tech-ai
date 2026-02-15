@@ -184,7 +184,7 @@ const KnowledgeCenter: React.FC = () => {
                         <Award size={28} className="text-white" />
                      </div>
                      <h3 className="text-xl font-bold">Certification & Recognition</h3>
-                     <p className="text-gray-400 text-sm">Earn industry-recognized certificates that prove your AI expertise to employers and clients.</p>
+                     <p className="text-gray-400 text-sm">Earn industry-recognised certificates that prove your AI expertise to employers and clients.</p>
                   </div>
                </div>
 
@@ -196,7 +196,7 @@ const KnowledgeCenter: React.FC = () => {
                         { career: 'Business Leaders & Executives', icon: '💼', color: 'from-purple-500 to-pink-500', topics: 'AI Strategy, ROI Analysis, Team Leadership' },
                         { career: 'Healthcare Professionals', icon: '🏥', color: 'from-blue-500 to-cyan-500', topics: 'Predictive Analytics, Patient Care, Diagnostics' },
                         { career: 'Engineers & Developers', icon: '⚙️', color: 'from-green-500 to-teal-500', topics: 'ML Models, Deployment, System Integration' },
-                        { career: 'Marketing & Sales', icon: '📊', color: 'from-orange-500 to-red-500', topics: 'Customer Insights, Automation, Personalization' },
+                        { career: 'Marketing & Sales', icon: '📊', color: 'from-orange-500 to-red-500', topics: 'Customer Insights, Automation, Personalisation' },
                         { career: 'Finance & Analytics', icon: '💰', color: 'from-yellow-500 to-orange-500', topics: 'Forecasting, Risk Analysis, Trading Algorithms' },
                         { career: 'Legal & Compliance', icon: '⚖️', color: 'from-indigo-500 to-purple-500', topics: 'Contract Analysis, Due Diligence, Compliance' }
                      ].map((path, idx) => (
