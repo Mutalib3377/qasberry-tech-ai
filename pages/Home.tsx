@@ -1,125 +1,152 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ShieldCheck, Zap, Globe, Youtube, Download, Cpu, Sparkles, Layers } from 'lucide-react';
-import { INDUSTRIES, CASE_STUDIES } from '../constants';
+import { ArrowRight, ShieldCheck, Zap, Youtube, Layers, CheckCircle2, PlayCircle, BarChart3, Clock } from 'lucide-react';
+import { INDUSTRIES } from '../constants';
 
 const Home: React.FC = () => {
   return (
-    <div className="space-y-32 pb-32">
-      {/* Immersive Hero Section */}
-      <section className="relative min-h-screen flex items-center px-6 overflow-hidden bg-tech-mesh">
-        {/* Background Atmosphere */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#00F5FF]/5 blur-[120px] rounded-full"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#9A6CFF]/5 blur-[120px] rounded-full"></div>
+    <div className="space-y-24 pb-24 bg-[#0B0F3F] text-white selection:bg-[#00F5FF] selection:text-[#0B0F3F] font-sans">
+      
+      {/* Hero Section */}
+      <section className="relative min-h-[90vh] flex items-center px-6 pt-20 overflow-hidden">
+        {/* Soft Premium Gradients */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] bg-[#00F5FF]/10 blur-[150px] rounded-full mix-blend-screen"></div>
+          <div className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] bg-[#9A6CFF]/10 blur-[150px] rounded-full mix-blend-screen"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Hero Left: Text Content */}
-          <div className="space-y-8 animate-in fade-in slide-in-from-left-12 duration-1000">
-            <div className="inline-flex items-center gap-3 px-4 py-2 glass rounded-full text-[10px] font-bold tracking-[0.2em] text-[#00F5FF] uppercase border border-[#00F5FF]/30">
-              <Sparkles size={12} className="animate-pulse" />
-              Intelligence Reimagined
+        <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Text Content */}
+          <div className="space-y-8 max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium text-[#00F5FF]">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00F5FF] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00F5FF]"></span>
+              </span>
+              Simple. Smart. Automated.
             </div>
 
-            <h1 className="text-5xl md:text-8xl font-black leading-[0.95] tracking-tighter">
-              Bridging the <br />
-              <span className="animate-shimmer">Analog Gap</span> <br />
-              with <span className="text-white">Ethical AI.</span>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight">
+              We Make Your Business <br className="hidden md:block"/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F5FF] to-[#9A6CFF]">Run Itself.</span>
             </h1>
 
-            <p className="text-xl text-gray-400 max-w-lg leading-relaxed font-light">
-              Qasberry Tech empowers industrial giants to transition from legacy manual processes to autonomous, AI-driven agency without compromising on safety or ethics.
+            <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-light">
+              Stop wasting hours on manual work. We build custom software and AI tools that automate your daily tasks, so you can focus on what truly matters: growing your business.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-6">
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link
                 to="/contact"
-                className="group relative px-10 py-5 bg-[#00F5FF] text-[#0B0F3F] font-black rounded-2xl shadow-[0_0_30px_rgba(0,245,255,0.4)] hover:scale-105 transition-all flex items-center justify-center gap-3"
+                className="px-8 py-4 bg-white text-[#0B0F3F] font-semibold rounded-xl hover:bg-gray-100 hover:scale-105 transition-all flex items-center justify-center gap-2 shadow-[0_0_40px_rgba(255,255,255,0.15)]"
               >
-                Book Strategic Consultation
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                Get a Free Audit
+                <ArrowRight size={18} />
               </Link>
               <Link
                 to="/roadmap-builder"
-                className="px-10 py-5 glass text-white font-bold rounded-2xl border-white/10 hover:bg-white/5 transition-all flex items-center justify-center gap-3"
+                className="px-8 py-4 bg-white/5 border border-white/10 text-white font-semibold rounded-xl hover:bg-white/10 transition-all flex items-center justify-center gap-2"
               >
-                Start Roadmap Builder
+                See How It Works
+                <PlayCircle size={18} />
               </Link>
             </div>
-
-            <div className="flex items-center gap-8 pt-10 border-t border-white/5">
-              <div>
-                <div className="text-2xl font-bold">150%</div>
-                <div className="text-[10px] text-gray-500 uppercase tracking-widest">Efficiency Gain</div>
+            
+            <div className="flex items-center gap-6 pt-8 text-sm text-gray-400">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 size={16} className="text-[#00F5FF]" /> No technical skills required
               </div>
-              <div className="w-px h-10 bg-white/10"></div>
-              <div>
-                <div className="text-2xl font-bold">24/7</div>
-                <div className="text-[10px] text-gray-500 uppercase tracking-widest">Asset Monitoring</div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 size={16} className="text-[#00F5FF]" /> Built for your exact needs
               </div>
             </div>
           </div>
 
-          {/* Hero Right: The Neural Core Visual */}
-          <div className="relative flex items-center justify-center animate-in fade-in slide-in-from-right-12 duration-1000 delay-300">
-            <div className="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px] animate-float">
-              {/* Outer Glow Rings */}
-              <div className="absolute inset-0 rounded-full border border-[#00F5FF]/20 animate-pulse-ring"></div>
-              <div className="absolute inset-[-20%] rounded-full border border-[#9A6CFF]/10 animate-pulse-ring" style={{ animationDelay: '1s' }}></div>
-
-              {/* Central Core Shape */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative w-48 h-48 md:w-80 md:h-80 glass rounded-[60px] rotate-45 border-[#00F5FF]/30 flex items-center justify-center shadow-[0_0_100px_rgba(0,245,255,0.15)] overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#00F5FF]/20 to-[#9A6CFF]/20"></div>
-                  <div className="relative -rotate-45 flex flex-col items-center gap-4">
-                    <Cpu size={64} className="text-[#00F5FF] animate-pulse" />
-                    <div className="text-[10px] font-mono text-[#00F5FF]/60 uppercase tracking-widest">Processing Core</div>
+          {/* Visual Content: Clean, minimal abstract representation of automation */}
+          <div className="relative w-full aspect-square max-w-lg mx-auto lg:ml-auto">
+            <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-white/10 border border-white/10 rounded-3xl shadow-2xl backdrop-blur-sm p-8 flex flex-col justify-between transform rotate-2 hover:rotate-0 transition-transform duration-700">
+              
+              {/* Fake UI Elements representing time saved */}
+              <div className="flex justify-between items-center pb-6 border-b border-white/10">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-[#00F5FF]/20 flex items-center justify-center text-[#00F5FF]">
+                    <Clock size={20} />
+                  </div>
+                  <div>
+                    <div className="text-sm text-gray-400">Hours Saved This Week</div>
+                    <div className="text-2xl font-bold text-white">42.5 hrs</div>
                   </div>
                 </div>
+                <BarChart3 className="text-gray-500" size={24} />
               </div>
 
-              {/* Orbiting Elements */}
-              <div className="absolute top-0 right-0 glass p-4 rounded-2xl border-[#00F5FF]/40 -mr-10 animate-float" style={{ animationDelay: '0.5s' }}>
-                <ShieldCheck className="text-[#00F5FF]" />
+              <div className="space-y-4 my-auto">
+                {[1, 2, 3].map((i) => (
+                  <div key={i} className="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5">
+                    <div className="w-6 h-6 rounded-full bg-[#9A6CFF]/20 flex items-center justify-center">
+                      <CheckCircle2 size={14} className="text-[#9A6CFF]" />
+                    </div>
+                    <div className="flex-1 space-y-2">
+                      <div className="h-2 bg-white/20 rounded-full w-3/4"></div>
+                      <div className="h-2 bg-white/10 rounded-full w-1/2"></div>
+                    </div>
+                    <div className="text-xs text-[#00F5FF] font-medium uppercase tracking-wider">Automated</div>
+                  </div>
+                ))}
               </div>
-              <div className="absolute bottom-10 left-0 glass p-4 rounded-2xl border-[#9A6CFF]/40 -ml-10 animate-float" style={{ animationDelay: '1.5s' }}>
-                <Zap className="text-[#9A6CFF]" />
-              </div>
-              <div className="absolute top-1/2 -right-16 glass p-3 rounded-full border-white/20">
-                <div className="w-2 h-2 rounded-full bg-[#00F5FF] animate-ping"></div>
+
+            </div>
+            
+            {/* Floating accent elements */}
+            <div className="absolute -top-6 -right-6 bg-[#0B0F3F] border border-white/10 p-4 rounded-2xl shadow-xl animate-bounce" style={{ animationDuration: '3s' }}>
+              <div className="flex items-center gap-2">
+                <span className="text-2xl">🚀</span>
+                <div>
+                  <div className="text-xs text-gray-400">Efficiency</div>
+                  <div className="text-sm font-bold text-[#00F5FF]">+150%</div>
+                </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* Simplified Value Prop Section with Premium Cards */}
-      <section className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* Value Props - Layman Terms */}
+      <section className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
-          { icon: <Layers className="text-[#00F5FF]" />, title: 'Deep Digitalisation', desc: 'We don\'t just layer AI over mess. We restructure your data foundation for maximum model accuracy.' },
-          { icon: <Globe className="text-[#9A6CFF]" />, title: 'Regional Expertise', desc: 'Bespoke frameworks built for the unique infrastructure challenges of the African industrial market.' },
-          { icon: <ShieldCheck className="text-[#00F5FF]" />, title: 'Governance First', desc: 'Every model we deploy is transparent, auditable, and strictly compliant with global ethical standards.' }
+          { 
+            icon: <Layers size={28} className="text-[#00F5FF]" />, 
+            title: 'Works for Any Business', 
+            desc: 'Whether you run a local shop or a large company, our tools are custom-built to fit exactly how you work.' 
+          },
+          { 
+            icon: <Zap size={28} className="text-[#9A6CFF]" />, 
+            title: 'Save Hours Every Day', 
+            desc: 'Imagine your repetitive tasks happening instantly without you lifting a finger. That is what we deliver.' 
+          },
+          { 
+            icon: <ShieldCheck size={28} className="text-[#00F5FF]" />, 
+            title: 'Safe & Secure', 
+            desc: 'Your data is highly protected. We build everything with top-tier security so you can have total peace of mind.' 
+          }
         ].map((item, idx) => (
-          <div key={idx} className="group relative glass p-10 rounded-[32px] overflow-hidden hover:translate-y-[-8px] transition-all duration-500">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white/5 to-transparent -mr-16 -mt-16 group-hover:scale-150 transition-transform"></div>
-            <div className="mb-8 p-4 bg-white/5 rounded-2xl w-fit group-hover:bg-[#00F5FF]/10 transition-colors">
+          <div key={idx} className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors duration-300">
+            <div className="mb-6 p-4 bg-white/5 rounded-2xl w-fit">
               {item.icon}
             </div>
-            <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
+            <h3 className="text-xl font-bold mb-3 text-white">{item.title}</h3>
             <p className="text-gray-400 leading-relaxed text-sm font-light">{item.desc}</p>
           </div>
         ))}
       </section>
 
-      {/* Industry Solutions with Hover Effects */}
-      <section className="max-w-7xl mx-auto px-6 space-y-16">
-        <div className="flex flex-col md:flex-row justify-between items-end gap-6">
-          <div className="space-y-4">
-            <h2 className="text-4xl md:text-6xl font-black tracking-tighter">Sector <span className="text-[#00F5FF]">Mastery.</span></h2>
-            <p className="text-gray-400 max-w-xl">Highly specialised AI implementation across critical industrial verticals.</p>
-          </div>
+      {/* Industry Solutions - Clean Cards */}
+      <section className="max-w-7xl mx-auto px-6 pt-16">
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">Solutions Built for You.</h2>
+          <p className="text-gray-400 text-lg font-light">We have helped businesses across various fields automate their most painful workflows. See what we can do for you.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -127,80 +154,81 @@ const Home: React.FC = () => {
             <Link
               key={industry.id}
               to={`/solutions/${industry.id}`}
-              className={`group glass p-8 rounded-[40px] border-white/5 hover:border-[#00F5FF]/30 transition-all duration-500 relative overflow-hidden flex flex-col h-full ${industry.isTitan ? 'bg-gradient-to-br from-[#0B0F3F] to-[#9A6CFF]/10 border-[#9A6CFF]/30' : ''}`}
+              className="group bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-[#00F5FF]/50 transition-all duration-300 flex flex-col h-full relative overflow-hidden"
             >
-              {industry.isTitan && (
-                <div className="absolute top-6 right-6 text-[10px] font-bold text-[#9A6CFF] tracking-[0.2em] px-3 py-1 glass border-[#9A6CFF]/30 rounded-full uppercase">
-                  Titan Sector
+              {/* Subtle hover background effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#00F5FF]/0 to-[#00F5FF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-3 bg-white/10 rounded-xl text-white group-hover:bg-[#00F5FF] group-hover:text-[#0B0F3F] transition-colors duration-300">
+                    {industry.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-white">{industry.name}</h3>
                 </div>
-              )}
-              <div className="p-5 bg-white/5 rounded-3xl w-fit mb-8 text-[#00F5FF] group-hover:scale-110 group-hover:bg-[#00F5FF] group-hover:text-[#0B0F3F] transition-all duration-500">
-                {industry.icon}
-              </div>
-              <h3 className="text-3xl font-bold mb-4">{industry.name}</h3>
-              <p className="text-gray-400 text-sm mb-10 leading-relaxed flex-grow">{industry.description}</p>
-              <div className="flex items-center justify-between text-[10px] font-black uppercase tracking-widest text-[#00F5FF]">
-                Explore Framework
-                <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
+                <p className="text-gray-400 text-sm mb-8 leading-relaxed flex-grow font-light">
+                  {industry.description}
+                </p>
+                <div className="flex items-center gap-2 text-sm font-semibold text-[#00F5FF] group-hover:text-white transition-colors">
+                  Learn more <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                </div>
               </div>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* YouTube Knowledge Center Preview */}
-      <section className="relative py-32 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-white/[0.02] -skew-y-3"></div>
-        <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div className="space-y-8">
-            <div className="inline-flex items-center gap-3 text-[#FF0000] font-bold tracking-[0.3em] uppercase text-[10px]">
-              <Youtube size={16} />
-              The Laboratory
+      {/* Educational Section - Simple & Friendly */}
+      <section className="max-w-7xl mx-auto px-6 pt-16">
+        <div className="bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-[40px] p-8 md:p-16 flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+          <div className="flex-1 space-y-6">
+            <div className="inline-flex items-center gap-2 text-[#FF0000] font-semibold text-sm bg-[#FF0000]/10 px-4 py-2 rounded-full">
+              <Youtube size={16} /> Free Training
             </div>
-            <h2 className="text-4xl md:text-6xl font-black leading-tight tracking-tighter">Welcome  <br /><span className="text-[#FF0000]">to the Future of AI Learning</span></h2>
-            <p className="text-gray-400 leading-relaxed text-lg font-light">
-              Artificial Intelligence is transforming every industry and those who understand it will lead the future. At our AI Academy, we provide practical, real world AI training designed to help you innovate, analyse, strategise, and grow with confidence. </p>
-            <Link to="/knowledge-center" className="inline-flex items-center gap-3 px-10 py-5 glass border-[#FF0000]/20 text-white font-bold rounded-2xl hover:bg-[#FF0000]/10 transition-all">
-              Watch Deep Dives <Youtube size={20} />
-            </Link>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+              Want to see exactly how <br className="hidden md:block"/> automation works?
+            </h2>
+            <p className="text-gray-400 text-lg font-light leading-relaxed">
+              You don't need to be a tech expert. Watch our simple, easy-to-understand videos where we break down how AI and automation can save you time and money.
+            </p>
+            <div className="pt-4">
+              <Link to="/knowledge-center" className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/20 transition-all">
+                Watch Free Tutorials <PlayCircle size={18} />
+              </Link>
+            </div>
           </div>
-          <div className="relative group">
-            <div className="aspect-video glass rounded-[40px] overflow-hidden border-white/10 shadow-2xl relative">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/3OFvOPa08Qs?si=WHFDqfQY4UI3MpMZ"
-                title="Qasberry AI Academy Training"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
-            </div>
-            <div className="absolute -bottom-10 -right-10 glass p-8 rounded-3xl border-[#FF0000]/20 hidden md:block animate-float">
-              <div className="text-4xl font-black tracking-tighter">150+</div>
-              <div className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Technical Tutorials</div>
-            </div>
+          
+          <div className="w-full lg:w-1/2 aspect-video bg-black/50 border border-white/10 rounded-3xl overflow-hidden shadow-2xl relative group cursor-pointer">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/3OFvOPa08Qs?si=WHFDqfQY4UI3MpMZ"
+              title="Qasberry AI Academy Training"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
       </section>
 
-      {/* Final CTA Banner */}
-      <section className="max-w-7xl mx-auto px-6">
-        <div className="glass bg-gradient-to-br from-[#00F5FF]/10 to-[#9A6CFF]/10 p-16 md:p-24 rounded-[60px] border-[#00F5FF]/20 text-center relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full bg-tech-mesh opacity-10"></div>
-          <div className="relative z-10 space-y-10">
-            <h2 className="text-4xl md:text-7xl font-black leading-tight tracking-tighter">Ready to evolve <br /> your operations?</h2>
-            <p className="text-gray-300 max-w-2xl mx-auto text-xl font-light">Our architects are ready to audit your legacy systems and build your custom AI roadmap today.</p>
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <Link to="/contact" className="px-12 py-5 bg-white text-[#0B0F3F] font-black rounded-2xl hover:scale-105 transition-all shadow-2xl">
-                Schedule Audit
-              </Link>
-              <Link to="/roadmap-builder" className="px-12 py-5 glass text-white font-black rounded-2xl hover:bg-white/5 transition-all">
-                Try Roadmap Generator
-              </Link>
-            </div>
-          </div>
+      {/* Final CTA - Super Clean */}
+      <section className="max-w-4xl mx-auto px-6 pt-16 text-center space-y-8">
+        <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white">
+          Ready to save time?
+        </h2>
+        <p className="text-xl text-gray-400 font-light max-w-2xl mx-auto">
+          Let's chat. We'll look at how you currently work and show you exactly what tasks can be taken off your plate.
+        </p>
+        <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+          <Link to="/contact" className="px-10 py-5 bg-[#00F5FF] text-[#0B0F3F] font-bold rounded-xl hover:scale-105 transition-transform shadow-[0_0_30px_rgba(0,245,255,0.3)]">
+            Contact Us Today
+          </Link>
+          <Link to="/roadmap-builder" className="px-10 py-5 bg-white/5 border border-white/10 text-white font-bold rounded-xl hover:bg-white/10 transition-colors">
+            Try the Free Tool
+          </Link>
         </div>
       </section>
+
     </div>
   );
 };
