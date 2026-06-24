@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] text-gray-500 font-bold uppercase tracking-[0.2em]">
-          <div>© 2024 QASBERRY TECH (PTY) LTD. ALL RIGHTS RESERVED.</div>
+          <div>© 2026 QASBERRY TECH. ALL RIGHTS RESERVED.</div>
           <div className="flex gap-8">
             <Link to="#" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="#" className="hover:text-white transition-colors">Terms of Service</Link>
