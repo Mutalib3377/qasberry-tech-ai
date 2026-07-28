@@ -10,6 +10,18 @@ import KnowledgeCenter from './pages/KnowledgeCenter';
 import Resources from './pages/Resources';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
+import MetaPixelScript from './lib/meta/MetaPixelScript';
+import { usePageTracking } from './lib/meta/usePageTracking';
+
+/**
+ * Mounts inside <Router> so useLocation() is available.
+ * Fires a Meta Pixel PageView on every client-side route change.
+ * Renders nothing — purely a side-effect component.
+ */
+const RouterPageTracker: React.FC = () => {
+  usePageTracking();
+  return null;
+};
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -22,6 +34,10 @@ const ScrollToTop = () => {
 const App: React.FC = () => {
   return (
     <Router>
+      {/* Meta Pixel: inject CDN script + fire initial PageView */}
+      <MetaPixelScript />
+      {/* Meta Pixel: fire PageView on every subsequent route change */}
+      <RouterPageTracker />
       <ScrollToTop />
       <div className="min-h-screen flex flex-col relative overflow-hidden bg-[#0B0F3F]">
         {/* Animated Background Accents */}
