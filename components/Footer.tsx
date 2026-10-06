@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
               </span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed font-light">
-              Pioneering the ethical integration of AI across industrial sectors in the African market. We build for performance, safety, and longevity.
+              AI and automation for sales and marketing companies. We help teams generate more leads, close more deals, and prove campaign ROI.
             </p>
             <div className="flex gap-4">
               <Link to="#" className="p-2 glass rounded-lg text-gray-400 hover:text-[#00F5FF] transition-colors"><Linkedin size={18} /></Link>
@@ -50,14 +50,14 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Sectors */}
+          {/* Solutions */}
           <div className="space-y-6">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-[#00F5FF]">Core Sectors</h4>
+            <h4 className="text-xs font-bold uppercase tracking-widest text-[#00F5FF]">Solutions</h4>
             <ul className="space-y-4 text-sm text-gray-400 font-light">
-              <li><Link to="/solutions/oil-gas" className="hover:text-white transition-colors">Oil & Gas (Titan)</Link></li>
-              <li><Link to="/solutions/healthcare" className="hover:text-white transition-colors">Healthcare AI</Link></li>
-              <li><Link to="/solutions/agriculture" className="hover:text-white transition-colors">Precision Agriculture</Link></li>
-              <li><Link to="/solutions/automotive" className="hover:text-white transition-colors">Automotive & Telemetry</Link></li>
+              <li><Link to="/solutions/lead-generation" className="hover:text-white transition-colors">Lead Generation</Link></li>
+              <li><Link to="/solutions/sales-automation" className="hover:text-white transition-colors">Sales Automation</Link></li>
+              <li><Link to="/solutions/campaign-automation" className="hover:text-white transition-colors">Campaign Automation</Link></li>
+              <li><Link to="/solutions/marketing-analytics" className="hover:text-white transition-colors">Marketing Analytics</Link></li>
             </ul>
           </div>
 
@@ -75,7 +75,7 @@ const Footer: React.FC = () => {
           {/* Newsletter */}
           <div className="space-y-6">
             <h4 className="text-xs font-bold uppercase tracking-widest text-white">Newsletter</h4>
-            <p className="text-xs text-gray-500 leading-relaxed font-light">Receive curated briefings on African industrial AI trends.</p>
+            <p className="text-xs text-gray-500 leading-relaxed font-light">Receive curated briefings on AI for sales and marketing.</p>
             <div className="flex gap-2">
               <input type="email" placeholder="Your email" className="bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-xs focus:outline-none focus:border-[#00F5FF] flex-grow" />
               <button className="bg-[#00F5FF] text-[#0B0F3F] p-2 rounded-lg hover:scale-105 transition-all">

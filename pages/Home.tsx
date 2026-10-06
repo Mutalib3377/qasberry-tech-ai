@@ -33,7 +33,7 @@ const Home: React.FC = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-light">
-              Stop wasting hours on manual work. We build custom software and AI tools that automate your daily tasks, so you can focus on what truly matters: growing your business.
+              Built for sales and marketing companies. We build custom AI tools that capture leads, follow up, and report on campaigns automatically, so your team can focus on closing deals.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -118,8 +118,8 @@ const Home: React.FC = () => {
         {[
           { 
             icon: <Layers size={28} className="text-[#00F5FF]" />, 
-            title: 'Works for Any Business', 
-            desc: 'Whether you run a local shop or a large company, our tools are custom-built to fit exactly how you work.' 
+            title: 'Made for Sales & Marketing', 
+            desc: 'Whether you run a sales team or a marketing agency, our tools are custom-built around your pipeline, campaigns, and clients.' 
           },
           { 
             icon: <Zap size={28} className="text-[#9A6CFF]" />, 
@@ -142,11 +142,11 @@ const Home: React.FC = () => {
         ))}
       </section>
 
-      {/* Industry Solutions - Clean Cards */}
+      {/* Sales & Marketing Solutions - Clean Cards */}
       <section className="max-w-7xl mx-auto px-6 pt-16">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">Solutions Built for You.</h2>
-          <p className="text-gray-400 text-lg font-light">We have helped businesses across various fields automate their most painful workflows. See what we can do for you.</p>
+          <p className="text-gray-400 text-lg font-light">We focus on one thing: helping sales and marketing companies automate the work that slows down growth. See what we can do for you.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

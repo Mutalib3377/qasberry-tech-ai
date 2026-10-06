@@ -8,7 +8,7 @@ const Blog: React.FC = () => {
          <div className="max-w-7xl mx-auto pt-20 space-y-20">
             <div className="text-center space-y-6 max-w-3xl mx-auto">
                <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">Qasberry <span className="text-[#9A6CFF]">Insights</span></h1>
-               <p className="text-gray-400 text-lg">Thought leadership on the convergence of digitalisation, heavy industry, and artificial intelligence.</p>
+               <p className="text-gray-400 text-lg">Practical thinking on how AI and automation are changing sales and marketing.</p>
             </div>
 
             {/* Featured Post */}
@@ -23,8 +23,8 @@ const Blog: React.FC = () => {
                         <span className="w-1 h-1 rounded-full bg-white/20"></span>
                         <Clock size={12} /> 12 Min Read
                      </div>
-                     <h2 className="text-4xl font-bold leading-tight group-hover:text-[#00F5FF] transition-colors">The Roadmap to Autonomous Extraction: AI in the Oil & Gas Sector</h2>
-                     <p className="text-gray-400 leading-relaxed">As the energy landscape shifts, the need for hyper-efficient extraction becomes paramount. We explore how Digital Twins and Computer Vision are redefining rig safety and operational ROI.</p>
+                     <h2 className="text-4xl font-bold leading-tight group-hover:text-[#00F5FF] transition-colors">The Roadmap to an AI-Powered Sales Pipeline</h2>
+                     <p className="text-gray-400 leading-relaxed">Buyers expect instant, personalised responses, and manual follow-up can't keep up. We explore how AI lead scoring, automated follow-ups, and conversational agents are redefining sales productivity and ROI.</p>
                      <div className="flex items-center justify-between pt-4">
                         <div className="flex items-center gap-3">
                            <img src="https://picsum.photos/seed/author/100/100" className="w-10 h-10 rounded-full border border-[#00F5FF]/30" alt="Author" />
@@ -42,12 +42,12 @@ const Blog: React.FC = () => {
             {/* Article Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                {[
-                  { title: 'Beyond the Hype: Practical AI for African SMEs', cat: 'Economy', img: '1' },
-                  { title: 'Computer Vision vs. Sensors: The Hardware Debate', cat: 'Technical', img: '2' },
-                  { title: 'Regulatory Landscapes: GDPR in the African Market', cat: 'Governance', img: '3' },
-                  { title: 'Predicting the Unpredictable: Agriculture Yields', cat: 'AgriTech', img: '4' },
-                  { title: 'AI Ethics: Bridging the Algorithmic Bias Gap', cat: 'Ethics', img: '5' },
-                  { title: 'Future-Proofing Your Data Infrastructure', cat: 'Cloud', img: '6' }
+                  { title: 'Beyond the Hype: Practical AI for Sales Teams', cat: 'Sales', img: '1' },
+                  { title: 'WhatsApp vs. Email: Where AI Follow-Ups Convert Best', cat: 'Engagement', img: '2' },
+                  { title: 'Consent & Compliance: NDPR and GDPR for Marketers', cat: 'Governance', img: '3' },
+                  { title: 'Attribution That Works: Tying Ad Spend to Revenue', cat: 'Analytics', img: '4' },
+                  { title: 'AI-Written Content Without Losing Your Brand Voice', cat: 'Marketing', img: '5' },
+                  { title: 'Cleaning Up Your CRM Before You Add AI', cat: 'CRM', img: '6' }
                ].map((post, idx) => (
                   <div key={idx} className="glass rounded-3xl border-white/5 overflow-hidden group hover:border-[#00F5FF]/20 transition-all flex flex-col">
                      <div className="aspect-[16/10] overflow-hidden relative">

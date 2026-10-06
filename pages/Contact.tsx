@@ -317,7 +317,7 @@ const Contact: React.FC = () => {
                   <div className="glass p-10 rounded-3xl border-white/5 space-y-6">
                      <h3 className="text-2xl font-bold">Global Network</h3>
                      <p className="text-gray-400">
-                        While our core is in Africa, we operate globally, providing remote AI architecture and on-site industrial audits across the continent and beyond.
+                        While our core is in Africa, we operate globally, providing remote AI builds and sales & marketing automation audits across the continent and beyond.
                      </p>
                      <div className="flex gap-4">
                         <div className="flex flex-col items-center">
