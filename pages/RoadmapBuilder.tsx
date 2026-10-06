@@ -18,7 +18,7 @@ import { INDUSTRIES } from '../constants';
 const RoadmapBuilder: React.FC = () => {
   const [step, setStep] = useState(1);
   const [inputs, setInputs] = useState<RoadmapInputs>({
-    industry: Industry.Healthcare,
+    industry: Industry.LeadGeneration,
     manualProcesses: [],
     infrastructure: [],
     email: ''
@@ -60,26 +60,26 @@ const RoadmapBuilder: React.FC = () => {
             {
               pillar: 'Digitisation',
               icon: <Database className="text-[#00F5FF]" />,
-              action: 'Converting physical logs to cloud-native data architectures.',
-              details: 'Move from ' + (inputs.manualProcesses[0] || 'manual paper') + ' to structured SQL tables.'
+              action: 'Getting every lead, deal, and campaign result into one clean system.',
+              details: 'Replace ' + (inputs.manualProcesses[0] || 'manual spreadsheets').toLowerCase() + ' with structured CRM data.'
             },
             {
               pillar: 'Connectivity',
               icon: <Layers className="text-[#9A6CFF]" />,
-              action: 'IoT & Real-time Cloud Integration.',
-              details: 'Enabling edge sensors to feed live operational metrics into the central brain.'
+              action: 'CRM, Ads & Messaging Integration.',
+              details: 'Linking your CRM, ad platforms, email, and WhatsApp so data flows without copy-pasting.'
             },
             {
               pillar: 'Augmentation',
               icon: <Cpu className="text-[#00F5FF]" />,
-              action: 'Initial AI Assistants & Predictive Insights.',
-              details: 'Human-in-the-loop decision support systems to maximize ' + (inputs.infrastructure.includes('No digital data') ? 'early-stage visibility' : 'operational uptime') + '.'
+              action: 'AI Assistants & Lead Scoring.',
+              details: 'AI that drafts follow-ups, scores leads, and flags hot prospects to maximise ' + (inputs.infrastructure.includes('Spreadsheets only — no CRM yet') ? 'early pipeline visibility' : 'conversion rates') + '.'
             },
             {
               pillar: 'Transformation',
               icon: <Eye className="text-[#9A6CFF]" />,
-              action: 'Digital Twins & Full AI Agency.',
-              details: 'Complete autonomous optimisation of the ' + inputs.industry + ' lifecycle.'
+              action: 'Autonomous Sales & Marketing Engine.',
+              details: 'End-to-end automation of ' + (currentIndustry?.name.toLowerCase() ?? 'your sales and marketing') + ', from first touch to closed deal.'
             }
           ].map((p, idx) => (
             <div key={idx} className="glass p-8 rounded-3xl border-white/5 relative overflow-hidden group">
@@ -110,7 +110,7 @@ const RoadmapBuilder: React.FC = () => {
     <div className="max-w-4xl mx-auto px-6 py-20">
       <div className="text-center mb-16 space-y-4">
         <h1 className="text-4xl md:text-6xl font-extrabold">Analog-to-AI <span className="text-[#00F5FF]">Generator</span></h1>
-        <p className="text-gray-400">Map your journey from manual operational silos to autonomous AI agency.</p>
+        <p className="text-gray-400">Map your sales and marketing team's journey from manual busywork to an AI-powered growth engine.</p>
       </div>
 
       <div className="glass rounded-[32px] border-white/10 overflow-hidden shadow-2xl">
@@ -135,12 +135,12 @@ const RoadmapBuilder: React.FC = () => {
             ))}
           </div>
 
-          {/* Step 1: Industry */}
+          {/* Step 1: Focus Area */}
           {step === 1 && (
             <div className="space-y-8 animate-in slide-in-from-right-8 duration-500">
               <div className="space-y-2">
-                <h2 className="text-2xl font-bold">Select Your Primary Industry</h2>
-                <p className="text-gray-400 text-sm">Targeting sector-specific AI logic and compliance frameworks.</p>
+                <h2 className="text-2xl font-bold">Select Your Biggest Growth Priority</h2>
+                <p className="text-gray-400 text-sm">Where should AI make the biggest difference for your sales or marketing team?</p>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {INDUSTRIES.map(i => (
@@ -164,16 +164,16 @@ const RoadmapBuilder: React.FC = () => {
             <div className="space-y-8 animate-in slide-in-from-right-8 duration-500">
               <div className="space-y-2">
                 <h2 className="text-2xl font-bold">The Analog Audit</h2>
-                <p className="text-gray-400 text-sm">Identify current manual processes and data friction points.</p>
+                <p className="text-gray-400 text-sm">Pick the repetitive sales and marketing tasks that eat up your team's time.</p>
               </div>
               <div className="space-y-3">
                 {[
-                  'Paper-based logs & reports',
-                  'Manual data entry into spreadsheets',
-                  'Siloed on-premise hardware',
-                  'Verbal communication of key metrics',
-                  'Reactive maintenance schedules',
-                  'Manual asset tracking'
+                  'Manually entering leads into spreadsheets',
+                  'Following up with prospects by hand',
+                  'Building campaign reports manually',
+                  'Writing every email and social post from scratch',
+                  'Answering the same customer enquiries repeatedly',
+                  'Copying data between CRM and ad platforms'
                 ].map(process => (
                   <button
                     key={process}
@@ -193,14 +193,14 @@ const RoadmapBuilder: React.FC = () => {
             <div className="space-y-8 animate-in slide-in-from-right-8 duration-500">
               <div className="space-y-2">
                 <h2 className="text-2xl font-bold">Infrastructure Check</h2>
-                <p className="text-gray-400 text-sm">Current tech stack status for AI integration readiness.</p>
+                <p className="text-gray-400 text-sm">Which tools does your sales and marketing team use today?</p>
               </div>
               <div className="space-y-4">
                 {[
-                  { label: 'Cloud Storage (AWS/Azure/GCP)', id: 'cloud' },
-                  { label: 'Edge Sensors / IoT Devices', id: 'iot' },
-                  { label: 'Legacy ERP/CRM Systems', id: 'legacy' },
-                  { label: 'No digital data infrastructure', id: 'none' }
+                  { label: 'CRM (HubSpot, Salesforce, Zoho, etc.)', id: 'crm' },
+                  { label: 'Email Marketing Platform (Mailchimp, Brevo, etc.)', id: 'email' },
+                  { label: 'Ad Accounts (Meta, Google, LinkedIn)', id: 'ads' },
+                  { label: 'Spreadsheets only — no CRM yet', id: 'none' }
                 ].map(item => (
                   <button
                     key={item.id}
