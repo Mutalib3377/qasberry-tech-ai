@@ -17,37 +17,37 @@ const Resources: React.FC = () => {
               title: 'Ethical AI Governance Framework',
               type: 'PDF Report',
               icon: <ShieldCheck className="text-[#9A6CFF]" />,
-              desc: 'A practical guide to using customer data and AI responsibly in sales and marketing.'
+              desc: 'A comprehensive guide to ensuring transparency and regulatory compliance in African AI deployments.'
             },
             {
-              title: 'AI in Sales & Marketing Trends',
+              title: '2024 Industrial AI Trends',
               type: 'Industry Report',
               icon: <BarChart3 className="text-[#00F5FF]" />,
-              desc: 'Data-driven insights into how sales teams and marketing agencies are adopting AI.'
+              desc: 'Data-driven insights into AI adoption rates across Oil & Gas, Healthcare, and Agriculture sectors.'
             },
             {
-              title: 'Spreadsheet-to-CRM Transition Guide',
+              title: 'Analog-to-AI Transition Guide',
               type: 'Whitepaper',
               icon: <FileText className="text-[#00F5FF]" />,
-              desc: 'Step-by-step methodology for moving leads and deals out of spreadsheets into an AI-ready CRM.'
+              desc: 'Step-by-step methodology for digitising legacy industrial workflows for machine learning readiness.'
             },
             {
-              title: 'AI Lead Scoring Playbook',
-              type: 'Playbook',
+              title: 'Computer Vision for Safety',
+              type: 'Technical Specs',
               icon: <ShieldCheck className="text-[#9A6CFF]" />,
-              desc: 'How to score and prioritise leads automatically so reps spend time on buyers who are ready.'
+              desc: 'Detailed breakdown of rig safety monitoring using edge-deployed vision models.'
             },
             {
               title: 'AI ROI Calculator Template',
               type: 'Excel Framework',
               icon: <BarChart3 className="text-[#00F5FF]" />,
-              desc: 'Framework for projecting extra pipeline, conversion lift, and hours saved from sales and marketing automation.'
+              desc: 'Framework for projecting financial impact and operational efficiency gains from AI implementation.'
             },
             {
-              title: 'Marketing Data Compliance Checklist',
+              title: 'Regulatory Compliance Checklist',
               type: 'Legal Brief',
               icon: <FileText className="text-[#00F5FF]" />,
-              desc: 'Consent, opt-out, and data protection (NDPR, GDPR) requirements for email, SMS, and WhatsApp marketing.'
+              desc: 'Local and international (GDPR) data sovereignty requirements for African tech operations.'
             }
           ].map((item, idx) => (
             <div key={idx} className="glass p-10 rounded-3xl border-white/5 hover:border-[#00F5FF]/30 transition-all flex flex-col group">
@@ -92,12 +92,12 @@ const Resources: React.FC = () => {
                 <input type="email" className="w-full glass py-3 px-4 rounded-xl focus:outline-none focus:ring-1 focus:ring-[#00F5FF]" placeholder="john@company.com" />
               </div>
               <div className="space-y-4">
-                <label className="text-sm font-medium text-gray-400">Company Type</label>
+                <label className="text-sm font-medium text-gray-400">Industry</label>
                 <select className="w-full glass py-3 px-4 rounded-xl focus:outline-none focus:ring-1 focus:ring-[#00F5FF] appearance-none">
-                  <option>Sales Team</option>
-                  <option>Marketing Agency</option>
-                  <option>In-House Marketing Team</option>
-                  <option>Sales & Marketing Consultancy</option>
+                  <option>Oil & Gas</option>
+                  <option>Healthcare</option>
+                  <option>Agriculture</option>
+                  <option>Automotive</option>
                 </select>
               </div>
               <button className="w-full py-4 bg-[#9A6CFF] text-white font-bold rounded-xl shadow-lg hover:scale-[1.02] transition-all">

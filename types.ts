@@ -1,12 +1,11 @@
 
-// Solution areas — currently scoped to sales & marketing companies only.
 export enum Industry {
-  LeadGeneration = 'lead-generation',
-  SalesAutomation = 'sales-automation',
-  CampaignAutomation = 'campaign-automation',
-  CustomerEngagement = 'customer-engagement',
-  MarketingAnalytics = 'marketing-analytics',
-  CrmIntegration = 'crm-integration'
+  OilGas = 'oil-gas',
+  Healthcare = 'healthcare',
+  Agriculture = 'agriculture',
+  Automotive = 'automotive',
+  CustomerService = 'customer-service',
+  Education = 'education'
 }
 
 export interface RoadmapInputs {
